@@ -1,0 +1,38 @@
+{
+  "name": "city-xcape-niche",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "description": "The City Xcape Niche - A luxury hotel management platform with multi-role access (Super Admin, Moderators, Guests). Backed by Supabase, packaged with Capacitor for Play Store.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "cap:init": "cap init \"City Xcape\" com.cityxcape.niche --web-dir=dist",
+    "cap:add:android": "cap add android",
+    "cap:sync": "npm run build && cap sync",
+    "android:open": "npm run cap:sync && cap open android",
+    "android:run": "npm run cap:sync && cap run android",
+    "android:build": "npm run cap:sync && cd android && ./gradlew assembleDebug",
+    "android:release": "npm run cap:sync && cd android && ./gradlew bundleRelease"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.105.1",
+    "lucide-react": "^0.460.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^6.1.2",
+    "@capacitor/cli": "^6.1.2",
+    "@capacitor/core": "^6.1.2",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16",
+    "vite": "^6.0.3"
+  }
+}
